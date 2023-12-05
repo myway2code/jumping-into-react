@@ -5,8 +5,8 @@ const Calculator = () => {
         ['7', '8', '9', '+'],
         ['4', '5', '6', '-'],
         ['1', '2', '3', '/'],
-        ['0', '.', 'clear', '*'],
-        ['calculate']
+        ['0', '.', '*', '='],
+        ['clear']
     ];
     let i = 0;
     const [myCalc, setMyCalc] = useState('');
@@ -15,7 +15,7 @@ const Calculator = () => {
         if (myCalc === '') { setMyCalc(Number(tempValue)); }
         else {
             switch (tempValue) {
-                case 'calculate':
+                case '=':
                     setMyCalc(eval(myCalc));
                     break;
                 case 'clear':
