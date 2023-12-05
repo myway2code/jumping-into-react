@@ -12,7 +12,10 @@ const Calculator = () => {
     const [myCalc, setMyCalc] = useState('');
     const handleClick = (element) => {
         const tempValue = element.target.value;
-        if (myCalc === '') { setMyCalc(Number(tempValue)); }
+        console.log(Number.isNaN(tempValue));
+        if (myCalc === '') { 
+            if (!isNaN(tempValue)) setMyCalc(Number(tempValue));
+        }
         else {
             switch (tempValue) {
                 case '=':
@@ -22,6 +25,7 @@ const Calculator = () => {
                     setMyCalc('');
                     break;
                 default:
+                    if (Number.isNaN(myCalc) || myCalc === 0) { setMyCalc(tempValue); }
                     setMyCalc(myCalc + tempValue);
             }
         }
