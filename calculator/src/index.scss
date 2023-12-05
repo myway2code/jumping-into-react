@@ -9,20 +9,32 @@ $box-shadow-dark: 0 0 5px 2px rgba($dark ,0.75);
 $shadow-inside: inset 0 0 1px $white;
 $shadow-inside-dark: inset 0 0 1px $dark;
 $radius: 0.5rem;
+$responde-spacing-to-height: 2rem;
 
 $font-size-large: 2rem;
 
 body {
+    margin: 0;
     background: $light-blue;
 }
+
+.center-child {
+    width: 100vw;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
+
+    > div {
+        margin: 0 auto;
+    }
+}
+
 .calculatorWrap {
     padding: 2rem;
+    max-width: 13vw;
     border-radius: 0.5rem;
     background-color: $opacity;
-    max-width: 13vw;
-    margin: -70vh auto 0;
     box-shadow: $box-shadow-dark;
-    transform: translateY(100vh);
 }
 
 .title {
@@ -45,6 +57,7 @@ body {
         list-style: none;
         flex: 0 0 25%;
         border: 0 none;
+        padding: $responde-spacing-to-height;
         box-sizing: border-box;
         border: 1px solid $dark;
         transition: $transition;

@@ -8,7 +8,7 @@ const Calculator = () => {
         ['0', '.', '*', '='],
         ['clear']
     ];
-    let i = 0;
+    let i = arrayCalcNumber.length;
     const [myCalc, setMyCalc] = useState('');
     const handleClick = (element) => {
         const tempValue = element.target.value;
@@ -35,11 +35,10 @@ const Calculator = () => {
                 <div className="total"><span className="result">&nbsp;{myCalc}</span></div>
                 {
                     arrayCalcNumber.flat().map((element) => {
-                        i++;
                         return (<button
                             className="digit"
                             value={element}
-                            key={i}
+                            key={i + element}
                             onClick={handleClick}
                         >
                             {element}
