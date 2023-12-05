@@ -30,7 +30,7 @@ const Calculator = () => {
 
     return (
         <div className="calculatorWrap"> 
-            <h1 className="title">my react  calculator</h1>
+            <h1 className="title">my react calculator</h1>
             <div className="calculator">
                 <div className="total"><span className="result">&nbsp;{myCalc}</span></div>
                 {
